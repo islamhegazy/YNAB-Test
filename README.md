@@ -1,6 +1,6 @@
 # YNABTest
 
-Run `npm install --force from install node_modules` 
+Run `npm install --force for install node_modules` 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.0.
 
