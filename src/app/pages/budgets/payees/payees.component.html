@@ -1,0 +1,26 @@
+<nb-card>
+    <nb-card-header>
+       List of payees
+    </nb-card-header>
+    <nb-card-body>
+      <div class="ss">
+         <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Transfer account id</th>
+                <th scope="col">Deleted</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let payee of PayeesList">
+                <td>{{payee.name}}</td>
+                <td>{{payee.transfer_account_id}}</td>
+                <td>{{payee.deleted}}</td>
+              </tr>
+            
+            </tbody>
+          </table>
+      </div>
+    </nb-card-body>
+  </nb-card>

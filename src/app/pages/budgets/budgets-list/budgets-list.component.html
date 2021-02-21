@@ -1,0 +1,51 @@
+<nb-card>
+  <nb-card-header>My Budgets</nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-sm-6 col-12" *ngFor="let budget of budgets">
+        <nb-card>
+          <nb-card-header>
+            <div class="d-flex justify-content-between">
+              <div>{{budget.name}}</div>
+              <div>
+                <a nbButton status="primary" size="small" class="mr-2"
+                  [routerLink]="'../budget/'+ budget.id+'/accounts'">Accounts</a>
+                <a nbButton status="primary" size="small" [routerLink]="'../budget/'+ budget.id+'/payees'">Payees</a>
+              </div>
+            </div>
+          </nb-card-header>
+          <nb-card-body>
+            <p><strong>Last modified on:</strong> {{budget.last_modified_on | date}}</p>
+            <nb-accordion>
+              <nb-accordion-item>
+                <nb-accordion-item-header>More Info...</nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p><strong>First month:</strong> {{budget.first_month | date}}</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <p><strong>Last month:</strong> {{budget.last_month | date}}</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <p><strong>Date format:</strong> {{budget.date_format.format }}</p>
+                    </div>
+                  </div>
+                  <p><strong>Currency format:</strong></p>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p><strong>ISO code:</strong> {{budget.currency_format.iso_code }}</p>
+                    </div>
+                    <div class="col-sm-6">
+                      <p><strong>Example format:</strong> {{budget.currency_format.example_format }}</p>
+                    </div>
+                  </div>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+            </nb-accordion>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

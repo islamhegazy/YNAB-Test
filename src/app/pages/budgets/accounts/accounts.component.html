@@ -1,0 +1,33 @@
+<nb-card>
+    <nb-card-header>Budget Accounts</nb-card-header>
+    <nb-card-body>
+      <div class="row">
+        <div class="col-12 mb-3">
+          <button nbButton status="success" size="small" (click)="onAddAccount()">Add Account</button>
+        </div>
+        <div class="col-sm-6 col-12" *ngFor="let account of accounts">
+          <nb-card>
+            <nb-card-header>
+              <div class="d-flex justify-content-between"> 
+                <div>{{account.name}}</div>
+              </div>
+            </nb-card-header>
+            <nb-card-body>
+              <div class="row">
+                <div class="col-sm-6">
+                  <p><strong>Type:</strong> {{account.type}}</p>
+                </div>
+                <div class="col-sm-6">
+                  <p><strong>Balance:</strong> {{account.cleared_balance/1000 | number: '2.2'}}</p>
+                </div>
+                <div class="col-12">
+                  <p><strong>Account Notes:</strong> {{account.note }}</p>
+                </div>
+              </div>
+           
+            </nb-card-body>
+          </nb-card>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
